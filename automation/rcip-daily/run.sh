@@ -13,8 +13,20 @@ if [[ -f "$DIR/logs/last-success" && "$(cat "$DIR/logs/last-success")" == "$(dat
   exit 0
 fi
 
+PROMPT="$(cat "$DIR/prompt.md")"
+
+# Adzuna keys come from the project's .env (git-ignored), never from the repo.
+ENV_FILE="$HOME/Downloads/job-logger/.env"
+if [[ -f "$ENV_FILE" ]]; then
+  ADZ_ID="$(grep -E '^ADZUNA_APP_ID=' "$ENV_FILE" | cut -d= -f2- | tr -d '"'"'"' ')"
+  ADZ_KEY="$(grep -E '^ADZUNA_APP_KEY=' "$ENV_FILE" | cut -d= -f2- | tr -d '"'"'"' ')"
+  if [[ -n "$ADZ_ID" && -n "$ADZ_KEY" ]]; then
+    PROMPT+=$'\n\n## Adzuna API keys\n'"app_id=$ADZ_ID"$'\n'"app_key=$ADZ_KEY"
+  fi
+fi
+
 echo "=== start $(date) ===" >> "$LOG"
-"$HOME/.local/bin/claude" -p "$(cat "$DIR/prompt.md")" \
+"$HOME/.local/bin/claude" -p "$PROMPT" \
   --model opus \
   --allowedTools "WebSearch" "WebFetch" \
     "mcp__claude_ai_Gmail__send_message" \

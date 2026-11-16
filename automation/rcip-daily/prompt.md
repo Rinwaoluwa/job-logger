@@ -32,6 +32,15 @@ b) Job leads: any post mentioning a software/developer/programmer opening at an 
 ## Step 3: Search for jobs
 Job titles to search everywhere: software developer, software engineer, programmer, web developer, frontend/front-end developer, full stack developer, mobile developer, application developer. That covers NOC 21231 (software engineers and designers), 21232 (software developers and programmers), 21234 (web designers and developers) and closely related 2123x codes.
 Sources: Job Bank (jobbank.gc.ca, which often marks postings as open to RCIP or AIP candidates), Indeed Canada, LinkedIn public job pages, the community or provincial job boards, and the careers pages of designated employers that are technology companies, banks, credit unions, insurers, hospitals and health authorities, universities, colleges, governments or large firms likely to hire developers.
+
+Some big job boards (Indeed, Glassdoor, Workopolis) often block automated access. Always also use these sources, which usually work:
+- Adzuna API, ONLY if an "Adzuna API keys" note appears at the end of these instructions: https://api.adzuna.com/v1/api/jobs/ca/search/1?app_id=<id>&app_key=<key>&results_per_page=50&what=software%20developer&where=<town or province> (also try "frontend developer", "web developer"). Each result's redirect_url leads to the original posting; open that to check it. Never write the keys into the email.
+- Applicant-tracking-system job APIs (JSON, no key), for designated employers that hire developers. Guess the employer's slug (usually its name in lowercase, e.g. "verafin", "kinduct", "nasdaq"), and use whichever answers with jobs:
+  - Greenhouse: https://boards-api.greenhouse.io/v1/boards/<slug>/jobs
+  - Lever: https://api.lever.co/v0/postings/<slug>?mode=json
+  - Ashby: https://api.ashbyhq.com/posting-api/job-board/<slug>
+  If an employer's careers page links to boards.greenhouse.io, jobs.lever.co or jobs.ashbyhq.com, take the slug from that link. Only a job whose location is in an RCIP community or an Atlantic province counts.
+Remote-only boards (Remotive, Jobicy, RemoteOK, Arbeitnow) are not useful here: fully remote jobs never qualify.
 a) RCIP, for EVERY community: find the community's own RCIP page (usually run by the local economic development office). Get its designated employer list and its list of eligible or priority occupations, and note any rules that exclude occupations. Then search for jobs in that community.
 b) AIP, for EVERY Atlantic province: get the province's designated-employer list where it is published, then search for jobs across the province, especially in its tech centres (NB: Moncton, Fredericton, Saint John; NS: Halifax; PEI: Charlottetown; NL: St. John's). Also check the careers pages of designated employers that hire developers.
 
