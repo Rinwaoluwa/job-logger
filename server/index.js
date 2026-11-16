@@ -32,6 +32,22 @@ if (config.host !== "127.0.0.1" && config.host !== "localhost" && !config.allowR
 }
 
 const app = express();
+
+// DNS-rebinding guard: a malicious page can point its own hostname at
+// 127.0.0.1, but the browser still sends that hostname in the Host header.
+// Only loopback names are accepted (any port, so the Vite proxy works).
+// Skipped when ALLOW_REMOTE=1, where the owner has opted into LAN access.
+const LOOPBACK_HOSTS = new Set(["127.0.0.1", "localhost", "[::1]"]);
+if (!config.allowRemote) {
+  app.use((req, res, next) => {
+    const hostname = String(req.headers.host || "").replace(/:\d+$/, "").toLowerCase();
+    if (!LOOPBACK_HOSTS.has(hostname)) {
+      return res.status(403).json({ error: "Forbidden host" });
+    }
+    next();
+  });
+}
+
 app.use(express.json({ limit: "2mb" }));
 
 // The résumé typeface, served so the preview iframe and the exported .html

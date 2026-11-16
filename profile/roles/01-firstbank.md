@@ -34,7 +34,7 @@ what you own versus other teams.
 - <ask> — TypeScript? Next.js? Tailwind? state management, testing, observability (Sentry?) on this role
 
 ## Verified metrics
-- [firstbank-m1] Application performance improved 35% across Internet Banking and Back Office (summary says "Core Web Vitals by 35%" — which measure was it?) | verified: no | resume: yes
+- [firstbank-m1] Core Web Vitals improved 35% across Internet Banking and Back Office, measured with Lighthouse | verified: no | resume: yes
 - [firstbank-m2] Component library accelerated feature delivery by 20% (how was this measured?) | verified: no | resume: yes
 - [firstbank-m3] Frontend build times reduced 25% | verified: no | resume: yes
 

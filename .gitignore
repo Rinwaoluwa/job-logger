@@ -7,3 +7,5 @@ data/
 server/db/*.db
 server/db/*.db-wal
 server/db/*.db-shm
+
+# Local logs of the daily RCIP/AIP search live in ~/.rcip-jobs/logs, outside the repo.
