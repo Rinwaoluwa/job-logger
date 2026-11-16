@@ -1,0 +1,4 @@
+/* Jobs tab and the job drawer's Overview. */
+
+.job-description { white-space: pre-wrap; font-size: 13px; line-height: 1.5; max-height: 400px; overflow-y: auto; }
+.note-text { font-size: 13px; line-height: 1.5; }

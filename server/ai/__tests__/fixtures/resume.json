@@ -1,0 +1,727 @@
+{
+ "resume": {
+  "target_title": "Senior Full Stack Developer",
+  "professional_summary": "Senior Full Stack Developer with 5 years of experience building production web applications. Sample summary text for a fictional candidate, including one gap-fill technology.",
+  "professional_summary_without_fills": "Senior Full Stack Developer with 5 years of experience building production web applications. Sample summary text for a fictional candidate.",
+  "skill_groups": [
+   {
+    "title": "Sample group 1",
+    "items": [
+     "Skill 1.1",
+     "Skill 1.2",
+     "Skill 1.3",
+     "Skill 1.4",
+     "Skill 1.5",
+     "Skill 1.6",
+     "Skill 1.7",
+     "Skill 1.8",
+     "Skill 1.9"
+    ]
+   },
+   {
+    "title": "Sample group 2",
+    "items": [
+     "Skill 2.1",
+     "Skill 2.2",
+     "Skill 2.3",
+     "Skill 2.4",
+     "Skill 2.5",
+     "Skill 2.6"
+    ]
+   },
+   {
+    "title": "Sample group 3",
+    "items": [
+     "Skill 3.1",
+     "Skill 3.2",
+     "Skill 3.3",
+     "Skill 3.4",
+     "Skill 3.5",
+     "Skill 3.6",
+     "Skill 3.7",
+     "Skill 3.8",
+     "Skill 3.9"
+    ]
+   },
+   {
+    "title": "Sample group 4",
+    "items": [
+     "Skill 4.1",
+     "Skill 4.2",
+     "Skill 4.3",
+     "Skill 4.4",
+     "Skill 4.5",
+     "Skill 4.6"
+    ]
+   },
+   {
+    "title": "Sample group 5",
+    "items": [
+     "Skill 5.1",
+     "Skill 5.2",
+     "Skill 5.3",
+     "Skill 5.4",
+     "Skill 5.5",
+     "Skill 5.6",
+     "Skill 5.7",
+     "Skill 5.8"
+    ]
+   }
+  ],
+  "experience": [
+   {
+    "role_id": "northwind",
+    "stack": "",
+    "stack_fills": [],
+    "engagement": null,
+    "bullets": [
+     {
+      "id": "northwind-b1",
+      "text": "Sample real-work bullet 1 for Northwind Freight: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "northwind-s1"
+      ],
+      "metric_ids": [
+       "northwind-m1"
+      ],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2",
+       "keyword 3",
+       "keyword 4",
+       "keyword 5"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "northwind-b2",
+      "text": "Sample real-work bullet 2 for Northwind Freight: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "northwind-s3",
+       "northwind-s1"
+      ],
+      "metric_ids": [
+       "northwind-m2"
+      ],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "northwind-b3",
+      "text": "Sample real-work bullet 3 for Northwind Freight: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "northwind-s4"
+      ],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "northwind-b4",
+      "text": "Sample real-work bullet 4 for Northwind Freight: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "northwind-b5",
+      "text": "Sample invented gap-fill bullet 5 for Northwind Freight: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2"
+      ],
+      "inferred": true,
+      "text_without_reframe": null
+     }
+    ],
+    "company": "Northwind Freight",
+    "title": "Senior Full Stack Developer",
+    "dates": "March 2023 – Present",
+    "location": "Vancouver, British Columbia (hybrid)",
+    "engagement_label": ""
+   },
+   {
+    "role_id": "brightpay",
+    "stack": "",
+    "stack_fills": [],
+    "engagement": null,
+    "bullets": [
+     {
+      "id": "brightpay-b1",
+      "text": "Sample real-work bullet 1 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "brightpay-s7"
+      ],
+      "metric_ids": [
+       "brightpay-m16",
+       "brightpay-m12"
+      ],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2",
+       "keyword 3"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "brightpay-b2",
+      "text": "Sample real-work bullet 2 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "brightpay-s1"
+      ],
+      "metric_ids": [
+       "brightpay-m1",
+       "brightpay-m3"
+      ],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "brightpay-b3",
+      "text": "Sample real-work bullet 3 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "brightpay-s2"
+      ],
+      "metric_ids": [
+       "brightpay-m4"
+      ],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "brightpay-b4",
+      "text": "Sample real-work bullet 4 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "brightpay-s5"
+      ],
+      "metric_ids": [
+       "brightpay-m10"
+      ],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "brightpay-b5",
+      "text": "Sample real-work bullet 5 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "brightpay-s6"
+      ],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2",
+       "keyword 3",
+       "keyword 4"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "brightpay-b6",
+      "text": "Sample invented gap-fill bullet 6 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2",
+       "keyword 3"
+      ],
+      "inferred": true,
+      "text_without_reframe": null
+     },
+     {
+      "id": "brightpay-b7",
+      "text": "Sample real-work bullet 7 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [],
+      "metric_ids": [
+       "brightpay-m14"
+      ],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     }
+    ],
+    "company": "BrightPay",
+    "title": "Frontend Developer",
+    "dates": "June 2021 – February 2023",
+    "location": "Remote",
+    "engagement_label": "Sample engagement label"
+   },
+   {
+    "role_id": "harbor",
+    "stack": "",
+    "stack_fills": [],
+    "engagement": null,
+    "bullets": [
+     {
+      "id": "harbor-b1",
+      "text": "Sample real-work bullet 1 for Harbor Labs: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "harbor-s1"
+      ],
+      "metric_ids": [
+       "harbor-m1"
+      ],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "harbor-b2",
+      "text": "Sample real-work bullet 2 for Harbor Labs: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "harbor-s1",
+       "harbor-s2"
+      ],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "harbor-b3",
+      "text": "Sample real-work bullet 3 for Harbor Labs: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "harbor-s4"
+      ],
+      "metric_ids": [],
+      "jd_items": [],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "harbor-b4",
+      "text": "Sample real-work bullet 4 for Harbor Labs: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "harbor-s3"
+      ],
+      "metric_ids": [],
+      "jd_items": [],
+      "inferred": false,
+      "text_without_reframe": null
+     }
+    ],
+    "company": "Harbor Labs",
+    "title": "Software Engineer",
+    "dates": "January 2021 – May 2021",
+    "location": "Remote",
+    "engagement_label": "Sample engagement label"
+   },
+   {
+    "role_id": "peoplegrid",
+    "stack": "",
+    "stack_fills": [],
+    "engagement": null,
+    "bullets": [
+     {
+      "id": "peoplegrid-b1",
+      "text": "Sample real-work bullet 1 for PeopleGrid: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "peoplegrid-s7",
+       "peoplegrid-s5"
+      ],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "peoplegrid-b2",
+      "text": "Sample real-work bullet 2 for PeopleGrid: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "peoplegrid-s3"
+      ],
+      "metric_ids": [
+       "peoplegrid-m1"
+      ],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "peoplegrid-b3",
+      "text": "Sample real-work bullet 3 for PeopleGrid: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "peoplegrid-s4"
+      ],
+      "metric_ids": [
+       "peoplegrid-m3"
+      ],
+      "jd_items": [],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "peoplegrid-b4",
+      "text": "Sample real-work bullet 4 for PeopleGrid: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "gen-s6"
+      ],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     }
+    ],
+    "company": "PeopleGrid",
+    "title": "Backend Engineer",
+    "dates": "June 2020 – December 2020",
+    "location": "Remote",
+    "engagement_label": "Sample engagement label"
+   },
+   {
+    "role_id": "fieldstack",
+    "stack": "",
+    "stack_fills": [],
+    "engagement": null,
+    "bullets": [
+     {
+      "id": "fieldstack-b1",
+      "text": "Sample real-work bullet 1 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "fieldstack-s2"
+      ],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "fieldstack-b2",
+      "text": "Sample real-work bullet 2 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "fieldstack-s4",
+       "fieldstack-s5"
+      ],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "fieldstack-b3",
+      "text": "Sample real-work bullet 3 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "fieldstack-b4",
+      "text": "Sample real-work bullet 4 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [
+       "fieldstack-s3"
+      ],
+      "metric_ids": [
+       "fieldstack-m1"
+      ],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": false,
+      "text_without_reframe": null
+     },
+     {
+      "id": "fieldstack-b5",
+      "text": "Sample invented gap-fill bullet 5 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1",
+       "keyword 2"
+      ],
+      "inferred": true,
+      "text_without_reframe": null
+     },
+     {
+      "id": "fieldstack-b6",
+      "text": "Sample invented gap-fill bullet 6 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+      "source_story_ids": [],
+      "metric_ids": [],
+      "jd_items": [
+       "keyword 1"
+      ],
+      "inferred": true,
+      "text_without_reframe": null
+     }
+    ],
+    "company": "Fieldstack",
+    "title": "Junior Developer",
+    "dates": "June 2018 – May 2020",
+    "location": "Remote",
+    "engagement_label": ""
+   }
+  ],
+  "certifications": [],
+  "education": [
+   "Example University, B.Sc. Computer Science, Sept 2016 – May 2020"
+  ],
+  "header": {
+   "name": "Alex Morgan",
+   "phone": "555-010-0199",
+   "email": "alex.morgan@example.com",
+   "location": "Vancouver, British Columbia",
+   "linkedin": "https://linkedin.com/in/alex-morgan-example",
+   "github": "https://github.com/alex-morgan-example",
+   "portfolio": "https://example.com"
+  }
+ },
+ "additions_to_review": [
+  {
+   "id": "add-1",
+   "kind": "bullet",
+   "location": "northwind-b5",
+   "text": "Sample invented gap-fill bullet 5 for Northwind Freight: built a feature in a named technology, with the impact stated in words.",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-2",
+   "kind": "bullet",
+   "location": "brightpay-b6",
+   "text": "Sample invented gap-fill bullet 6 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-3",
+   "kind": "skill",
+   "location": "skills/Sample 1/Sample 2",
+   "text": "Sample addition",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-4",
+   "kind": "summary",
+   "location": "summary",
+   "text": "Sample addition",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-5",
+   "kind": "bullet",
+   "location": "fieldstack-b5",
+   "text": "Sample invented gap-fill bullet 5 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-6",
+   "kind": "skill",
+   "location": "skills/Sample 1/Sample 2",
+   "text": "Sample addition",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-7",
+   "kind": "summary",
+   "location": "summary",
+   "text": "Sample addition",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-8",
+   "kind": "skill",
+   "location": "skills/Sample 1/Sample 2",
+   "text": "Sample addition",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-9",
+   "kind": "bullet",
+   "location": "fieldstack-b6",
+   "text": "Sample invented gap-fill bullet 6 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "auto-skill-languages--sql",
+   "kind": "skill",
+   "location": "skills/Sample 1/Sample 2",
+   "text": "Sample addition",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low"
+  },
+  {
+   "id": "add-10",
+   "kind": "skill",
+   "location": "skills/Sample 1/Sample 2",
+   "text": "Sample addition",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "add-11",
+   "kind": "summary",
+   "location": "summary",
+   "text": "Sample addition",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "low",
+   "gate": "open"
+  },
+  {
+   "id": "composed-northwind-b4",
+   "kind": "bullet",
+   "location": "northwind-b4",
+   "text": "Sample real-work bullet 4 for Northwind Freight: built a feature in a named technology, with the impact stated in words.",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "medium",
+   "gate": "open"
+  },
+  {
+   "id": "composed-brightpay-b7",
+   "kind": "bullet",
+   "location": "brightpay-b7",
+   "text": "Sample real-work bullet 7 for BrightPay: built a feature in a named technology, with the impact stated in words.",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "medium",
+   "gate": "open"
+  },
+  {
+   "id": "composed-fieldstack-b3",
+   "kind": "bullet",
+   "location": "fieldstack-b3",
+   "text": "Sample real-work bullet 3 for Fieldstack: built a feature in a named technology, with the impact stated in words.",
+   "reason": "Gap fill: sample reason for a fictional candidate.",
+   "confidence": "medium",
+   "gate": "open"
+  },
+  {
+   "id": "reviewer-note-unflagged_number-brightpay-b7-0",
+   "kind": "note",
+   "location": "brightpay-b7",
+   "text": "Sample addition",
+   "reason": "Reviewer: sample reason for a fictional candidate.",
+   "confidence": "medium",
+   "gate": "open"
+  },
+  {
+   "id": "reviewer-note-unsupported_claim-northwind-b4-1",
+   "kind": "note",
+   "location": "northwind-b4",
+   "text": "Sample addition",
+   "reason": "Reviewer: sample reason for a fictional candidate.",
+   "confidence": "medium",
+   "gate": "open"
+  },
+  {
+   "id": "reviewer-note-unsupported_claim-peoplegrid-b4-2",
+   "kind": "note",
+   "location": "peoplegrid-b4",
+   "text": "Sample addition",
+   "reason": "Reviewer: sample reason for a fictional candidate.",
+   "confidence": "medium",
+   "gate": "open"
+  }
+ ],
+ "match_score": 80,
+ "must_have_gaps": [
+  "Sample must-have gap 1"
+ ],
+ "nice_to_have_gaps": [
+  "Sample nice-to-have gap 1",
+  "Sample nice-to-have gap 2",
+  "Sample nice-to-have gap 3"
+ ],
+ "ats_keywords": [
+  "keyword 1",
+  "keyword 2",
+  "keyword 3",
+  "keyword 4",
+  "keyword 5",
+  "keyword 6",
+  "keyword 7",
+  "keyword 8",
+  "keyword 9",
+  "keyword 10",
+  "keyword 11",
+  "keyword 12",
+  "keyword 13",
+  "keyword 14"
+ ],
+ "rewrite_notes": [
+  "Sample rewrite note 1"
+ ],
+ "plan": {
+  "role_plan": [
+   {
+    "role_id": "northwind"
+   },
+   {
+    "role_id": "brightpay"
+   },
+   {
+    "role_id": "harbor"
+   },
+   {
+    "role_id": "peoplegrid"
+   },
+   {
+    "role_id": "fieldstack"
+   }
+  ]
+ }
+}

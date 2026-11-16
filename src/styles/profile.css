@@ -1,0 +1,138 @@
+/* Profile tab: the rail layout (shared with Interviews), rich text,
+   stories, flashcards. */
+
+/* --- Profile tab ------------------------------------------------------
+   Rail + detail, like the document workspace, but in normal page flow:
+   the rail sticks and the page scrolls, rather than nesting a scroller. */
+.rail-layout { display: grid; grid-template-columns: 250px minmax(0, 1fr); gap: 16px; align-items: start; }
+.rail { position: sticky; top: 14px; display: flex; flex-direction: column; gap: 2px; }
+.rail-main > .card { margin-top: 0; margin-bottom: 14px; }
+.rail-main > .card + .card { margin-top: 0; }
+.rail-heading {
+  font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .4px;
+  color: var(--text-faint); padding: 12px 9px 4px;
+}
+.rail-item-warn { background: var(--warn-soft); border-color: var(--warn-border); }
+.rail-item-warn:hover:not(.active) { background: var(--warn-soft-hover); }
+.rail-dot {
+  display: inline-block; width: 6px; height: 6px; border-radius: 50%;
+  background: var(--warn); margin-left: 5px; vertical-align: middle;
+}
+
+.warn-card { background: var(--warn-soft); border-color: var(--warn-border); }
+.chip-neutral {
+  display: inline-flex; padding: 2px 9px; border-radius: 999px;
+  font-size: 12px; font-weight: 600; background: var(--bg-sunken); color: var(--text-muted);
+}
+.id-chip {
+  font-family: var(--font-mono); font-size: 11px;
+  background: var(--bg-sunken); color: var(--text-2); border-radius: 4px; padding: 1px 5px;
+}
+.tech-chip {
+  display: inline-block; font-size: 12px; background: var(--bg-sunken); color: var(--text-2);
+  border-radius: 999px; padding: 2px 9px; margin: 0 4px 4px 0;
+}
+.tech-note { color: var(--text-faint); margin-left: 4px; font-weight: 700; cursor: help; }
+
+.prose { line-height: 1.55; color: var(--text-2); }
+.prose p { margin: 0 0 8px; }
+.prose p:last-child { margin-bottom: 0; }
+.tech-list { margin: 0; padding-left: 18px; line-height: 1.55; }
+.tech-list li { margin-bottom: 2px; }
+.tight-list { margin: 0; padding-left: 18px; line-height: 1.55; }
+.tight-list li { margin-bottom: 3px; }
+.field-label { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: .3px; color: var(--text-faint); margin-bottom: 2px; }
+tr.row-muted td { color: var(--text-faint); }
+tr.row-muted:hover td { background: var(--bg-elevated); cursor: default; }
+
+.story { border-top: 1px solid var(--border-faint); padding: 8px 0; }
+.story:first-of-type { border-top: 0; }
+.story > summary {
+  display: flex; align-items: center; gap: 8px; flex-wrap: wrap;
+  cursor: pointer; font-size: 13.5px; list-style: none;
+}
+.story > summary::-webkit-details-marker { display: none; }
+.story > summary::before { content: "\25B8"; color: var(--text-faint); font-size: 11px; }
+.story[open] > summary::before { content: "\25BE"; }
+.story-body { padding: 8px 0 4px 18px; }
+
+.kv { margin: 0; }
+.kv-row { display: grid; grid-template-columns: 190px minmax(0, 1fr); gap: 10px; padding: 6px 0; border-bottom: 1px solid var(--bg); }
+.kv-row:last-child { border-bottom: 0; }
+.kv dt { font-size: 12.5px; font-weight: 600; color: var(--text-muted); }
+.kv dd { margin: 0; font-size: 13.5px; line-height: 1.5; }
+
+@media (max-width: 860px) {
+  .rail-layout { grid-template-columns: 1fr; }
+  .rail { position: static; }
+  .kv-row { grid-template-columns: 1fr; gap: 2px; }
+}
+
+/* --- Profile tab: reading the knowledge base ----------------------------
+   Rich text out of the files (lists kept, ids as links, asides subdued),
+   the story layout shared by the role pages, the stories list and the
+   rehearse deck, and the deck itself. */
+.rich ul, .rich ol { margin: 4px 0 8px; padding-left: 18px; line-height: 1.55; }
+.rich li { margin-bottom: 3px; }
+.rich ol.rich-ol { list-style: none; padding-left: 0; }
+.rich ol.rich-ol li { padding-left: 28px; text-indent: -28px; }
+.rich .ol-marker { display: inline-block; min-width: 24px; text-indent: 0; color: var(--text-muted); font-variant-numeric: tabular-nums; }
+.rich .inline-code { font-family: var(--font-mono); font-size: .92em; background: var(--bg-sunken); border-radius: 4px; padding: 0 4px; }
+.prose.inline-prose { display: inline; }
+.prose.inline-prose p { display: inline; margin: 0; }
+.note { color: var(--text-faint); font-size: .92em; }
+.note-draft {
+  display: inline-block; background: var(--warn-soft); color: var(--warn-text); border-radius: 4px;
+  padding: 0 6px; font-size: 11px; font-weight: 600; vertical-align: middle; line-height: 1.7;
+}
+a.id-link { color: var(--text-2); border-bottom: 1px dotted var(--text-faint); }
+a.id-link:hover { text-decoration: none; background: var(--border); color: var(--text); }
+
+.story-grid { display: grid; grid-template-columns: minmax(0, 1fr) minmax(260px, 38%); gap: 16px; align-items: start; }
+.story-grid.single { grid-template-columns: minmax(0, 1fr); }
+.story-field { margin-bottom: 8px; }
+.story-field:last-child { margin-bottom: 0; }
+.spoken { background: var(--bg); border-left: 3px solid var(--primary); border-radius: 6px; padding: 10px 12px; }
+.spoken .prose { color: var(--text); }
+.story-preview { flex-basis: 100%; font-weight: 400; color: var(--text-2); font-size: 12.5px; line-height: 1.5; margin-top: 2px; }
+.story-metrics-inline { display: flex; flex-wrap: wrap; gap: 4px 14px; }
+.metric-inline { display: inline-flex; align-items: center; gap: 5px; flex-wrap: wrap; }
+.story-row > summary .tech-chip { font-size: 11px; padding: 1px 7px; margin: 0; }
+.story > summary .tech-chip { margin: 0; }
+
+.target { outline: 2px solid var(--warn-border); outline-offset: 2px; border-radius: 6px; animation: target-fade 1.6s ease-out forwards; }
+@keyframes target-fade { 0%, 60% { outline-color: var(--warn-border); } 100% { outline-color: transparent; } }
+
+.stories-toolbar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.stories-toolbar select { width: auto; }
+.comp-picker-wrap { position: relative; }
+.comp-summary {
+  list-style: none; cursor: pointer; font-size: 12.5px; padding: 6px 10px;
+  border: 1px solid var(--border-strong); border-radius: 6px; background: var(--bg-elevated); user-select: none;
+}
+.comp-summary::-webkit-details-marker { display: none; }
+.comp-picker-wrap[open] .comp-summary { background: var(--bg-hover); }
+.comp-picker {
+  position: absolute; z-index: 20; top: calc(100% + 4px); left: 0; width: min(560px, 90vw);
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 10px;
+  box-shadow: var(--shadow-2);
+}
+.comp-picker input { width: 100%; margin-bottom: 8px; }
+.comp-cloud { max-height: 220px; overflow: auto; display: flex; flex-wrap: wrap; gap: 4px; }
+.chip-btn { border: 1px solid transparent; cursor: pointer; font-family: inherit; line-height: 1.5; }
+.chip-btn:hover:not(:disabled) { background: var(--border); color: var(--text); }
+.chip-btn.active, .chip-btn.active:hover:not(:disabled) { background: var(--primary); color: var(--on-primary); }
+.chip-btn .chip-count { opacity: .6; font-size: 11px; margin-left: 2px; }
+
+.flash-card { min-height: 280px; display: flex; flex-direction: column; gap: 14px; }
+.flash-prompt { font-size: 21px; line-height: 1.4; font-weight: 600; color: var(--text); padding: 18px 0; }
+.flash-answer { border-top: 1px solid var(--border-faint); padding-top: 14px; }
+.flash-actions { display: flex; gap: 8px; flex-wrap: wrap; margin-top: auto; }
+.kbd {
+  font-family: var(--font-mono); font-size: 11px;
+  border: 1px solid var(--border); border-bottom-width: 2px; border-radius: 4px; padding: 0 5px; background: var(--bg-elevated);
+}
+
+@media (max-width: 860px) {
+  .story-grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,55 @@
+/* Background tasks: the pill, the activity rows, the toasts. */
+
+/* --- Background tasks --------------------------------------------------
+   The top-bar pill, the activity panel it opens, and the toasts. */
+.tasks-pill {
+  display: inline-flex; align-items: center; gap: 7px; font-family: inherit;
+  font-size: 12.5px; color: var(--text-2); background: var(--bg-sunken); border: 1px solid var(--border);
+  border-radius: 999px; padding: 4px 10px; cursor: pointer;
+}
+.tasks-pill:hover:not(:disabled) { background: var(--border); }
+.tasks-pill .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--text-faint); flex-shrink: 0; }
+.tasks-pill.active { color: var(--info-text); background: var(--info-soft); border-color: var(--info-border); }
+.tasks-pill.active:hover:not(:disabled) { background: var(--info-border); }
+.tasks-pill.active .dot { background: var(--info); animation: pulse 1s infinite; }
+.tasks-pill.failed { color: var(--danger-text); background: var(--danger-soft); border-color: var(--danger-border); }
+.tasks-pill.failed .dot { background: var(--danger); }
+
+.drawer-narrow { width: min(460px, 100%); }
+
+.task-list { display: flex; flex-direction: column; gap: 8px; }
+.task-row { border: 1px solid var(--border); border-radius: 8px; padding: 10px 12px; background: var(--bg-elevated); }
+.task-row.status-running { border-color: var(--info-border); }
+.task-row.status-failed { border-color: var(--danger-border); background: var(--danger-soft); }
+.task-status { text-transform: none; }
+.task-status-queued { background: var(--bg-sunken); color: var(--text-muted); }
+.task-status-running { background: var(--info-soft); color: var(--info-text); }
+.task-status-done { background: var(--ok-soft); color: var(--ok-text); }
+.task-status-failed { background: var(--danger-soft); color: var(--danger-text); }
+.task-status-cancelled { background: var(--bg-sunken); color: var(--text-faint); }
+
+.task-group > summary { list-style: none; cursor: pointer; }
+.task-group > summary::-webkit-details-marker { display: none; }
+.task-group[open] > summary { margin-bottom: 8px; }
+.task-group .task-list { padding-left: 10px; border-left: 2px solid var(--border); }
+
+.run-progress-compact { display: flex; align-items: center; gap: 4px; margin-top: 8px; flex-wrap: wrap; }
+.run-progress-compact .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--border-strong); flex-shrink: 0; }
+.run-progress-compact .dot.running { background: var(--info); animation: pulse 1s infinite; }
+.run-progress-compact .dot.done { background: var(--ok); }
+.run-progress-compact .dot.failed { background: var(--danger); }
+.run-progress-compact .label { margin-left: 4px; }
+
+.toast-stack {
+  position: fixed; right: 16px; bottom: 16px; z-index: 60;
+  display: flex; flex-direction: column; gap: 8px;
+  max-width: min(440px, calc(100vw - 32px));
+}
+.toast {
+  display: flex; align-items: flex-start; gap: 10px; cursor: pointer;
+  background: var(--primary); color: var(--on-primary); border-radius: 8px; padding: 10px 12px;
+  font-size: 13px; line-height: 1.4; box-shadow: var(--shadow-2);
+}
+.toast.error { background: var(--danger); }
+.toast-close { background: transparent; border: 0; color: var(--on-primary-muted); padding: 0 2px; font-size: 13px; line-height: 1.4; }
+.toast-close:hover:not(:disabled) { background: transparent; color: var(--on-primary); }

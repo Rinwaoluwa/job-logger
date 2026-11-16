@@ -1,0 +1,63 @@
+/* Interviews: prep sections, story chips, rounds, cheat sheet, mock. */
+
+/* --- Interview tab ---------------------------------------------------
+   The prep's sections, the story map rows, and the story chips that open
+   a story's spoken version in place. */
+.prep-section > summary {
+  display: flex; align-items: baseline; gap: 10px; flex-wrap: wrap; cursor: pointer; list-style: none;
+}
+.prep-section > summary::-webkit-details-marker { display: none; }
+.prep-section > summary::before { content: "\25B8"; color: var(--text-faint); font-size: 11px; }
+.prep-section[open] > summary::before { content: "\25BE"; }
+.prep-section-body { margin-top: 10px; }
+.map-row { padding: 8px 0; border-top: 1px solid var(--border-faint); }
+.map-row:first-child { border-top: 0; padding-top: 0; }
+.map-head { display: flex; align-items: center; gap: 6px; flex-wrap: wrap; }
+.map-stories { list-style: none; margin: 6px 0 0; padding: 0 0 0 4px; display: flex; flex-direction: column; gap: 4px; }
+.if-asked { color: var(--text-2); font-style: italic; margin-top: 4px; }
+.inferred-note { color: var(--warn-text); }
+.pitch { padding: 8px 0; border-top: 1px solid var(--border-faint); }
+.pitch:first-child { border-top: 0; padding-top: 0; }
+.question-card { margin-bottom: 8px; padding: 12px 14px; }
+.question-card:last-child { margin-bottom: 0; }
+.story-chip-wrap { display: inline; position: relative; }
+.story-chip { cursor: pointer; border: 1px solid transparent; font-family: inherit; line-height: 1.5; }
+.story-chip:hover:not(:disabled) { background: var(--info-border); color: var(--info-text); }
+.story-chip.open { background: var(--info); color: var(--on-primary); }
+.story-chip-angle { display: inline; }
+.story-chip-pop {
+  display: block; margin: 6px 0 4px; padding: 10px 12px; background: var(--bg-elevated);
+  border: 1px solid var(--border); border-radius: 8px; font-size: 12.5px;
+}
+.story-chip-pop .spoken { padding: 8px 10px; }
+
+/* --- Interview rounds, cheat sheet, mock interview ------------------- */
+.rounds-bar { padding: 10px 14px; margin-bottom: 10px; }
+.round-chip {
+  background: var(--bg-elevated); color: var(--text); border: 1px solid var(--border-strong); border-radius: 999px;
+  padding: 3px 10px; font-size: 12px; font-weight: 500; line-height: 1.5;
+}
+.round-chip:hover:not(:disabled) { background: var(--bg-hover); color: var(--text); }
+.round-chip.active, .round-chip.active:hover:not(:disabled) { background: var(--primary); border-color: var(--text); color: var(--on-primary); }
+.round-chip.active .muted { color: var(--on-primary-muted); }
+.round-chip.done { border-style: dashed; }
+.watch-outs li { margin-bottom: 4px; }
+.modal-lg { width: min(820px, 100%); }
+.modal-xl { width: min(1100px, 100%); }
+.cheat-frame { display: block; width: 100%; height: 72vh; border: 0; background: var(--paper); }
+.mock-overlay { position: fixed; inset: 0; z-index: 55; background: var(--bg-sunken); overflow-y: auto; }
+.mock-inner { max-width: 920px; margin: 0 auto; padding: 20px 16px 40px; }
+.mock-inner .flash-card { min-height: 0; }
+.mock-inner textarea { font-size: 14px; line-height: 1.5; }
+.mic-btn { background: var(--bg-elevated); color: var(--text); border: 1px solid var(--border-strong); }
+.mic-btn:hover:not(:disabled) { background: var(--bg-hover); color: var(--text); }
+.mic-btn.listening { background: var(--danger-soft); border-color: var(--danger-border); color: var(--danger-text); animation: mic-pulse 1.2s ease-in-out infinite; }
+.mic-btn.listening:hover:not(:disabled) { background: var(--danger-border); color: var(--danger-text); }
+@keyframes mic-pulse { 0%, 100% { box-shadow: 0 0 0 0 rgba(239,68,68,.35); } 50% { box-shadow: 0 0 0 6px rgba(239,68,68,0); } }
+.critique { border-top: 1px solid var(--border-faint); padding-top: 10px; }
+
+/* --- Interviews page -------------------------------------------------- */
+.sent-chip { font-size: 10.5px; padding: 0 6px; margin-left: 6px; vertical-align: middle; }
+.sent-resume-preview { max-height: 70vh; overflow: auto; border: 1px solid var(--border); border-radius: 8px; background: var(--bg-sunken); padding: 12px; }
+.sent-resume-preview .doc-page { margin: 0 auto; }
+.rail select { width: 100%; }

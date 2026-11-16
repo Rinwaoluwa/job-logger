@@ -1,0 +1,122 @@
+{
+  "queries": {
+    "titles": [
+      "full stack developer",
+      "frontend developer",
+      "backend developer",
+      "software engineer",
+      "software developer",
+      "web developer"
+    ]
+  },
+  "filters": {
+    "title_must_match": [
+      "developer",
+      "engineer",
+      "programmer"
+    ],
+    "title_exclude": [
+      "intern",
+      "co-op",
+      "manager",
+      "director",
+      "principal",
+      "staff",
+      "qa",
+      "test",
+      "data scientist",
+      "embedded",
+      ".net",
+      "salesforce"
+    ],
+    "max_age_days": 30
+  },
+  "targets": [
+    {
+      "id": "ca-local",
+      "country": "ca",
+      "where": "Vancouver, British Columbia",
+      "distance_km": 60
+    },
+    {
+      "id": "ca-remote",
+      "country": "ca",
+      "remote": true
+    },
+    {
+      "id": "us-remote",
+      "country": "us",
+      "remote": true
+    }
+  ],
+  "adzuna": {
+    "enabled": false,
+    "max_days_old": 14,
+    "results_per_page": 50,
+    "pages": 2
+  },
+  "muse": {
+    "enabled": false,
+    "locations": [
+      "Vancouver, Canada",
+      "Flexible / Remote"
+    ],
+    "pages": 3
+  },
+  "remotive": {
+    "enabled": false,
+    "category": "software-dev",
+    "min_interval_hours": 6
+  },
+  "jobicy": {
+    "enabled": false,
+    "geos": [
+      "canada",
+      "usa"
+    ],
+    "tags": [
+      "developer",
+      "javascript",
+      "react",
+      "node"
+    ]
+  },
+  "arbeitnow": {
+    "enabled": false
+  },
+  "remoteok": {
+    "enabled": false,
+    "tags": [
+      "javascript",
+      "typescript",
+      "react",
+      "node",
+      "full stack"
+    ]
+  },
+  "boards": {
+    "greenhouse": [],
+    "lever": [],
+    "ashby": []
+  },
+  "routinelog": {
+    "enabled": false,
+    "claude_doc_id": "",
+    "model": "haiku",
+    "max_cost_usd": 0.25,
+    "max_hydrate_per_refresh": 20
+  },
+  "jackandjill": {
+    "enabled": false,
+    "path": "data/jackandjill",
+    "max_age_days": 30
+  },
+  "fit": {
+    "auto_run": true,
+    "max_per_refresh": 40
+  },
+  "schedule": {
+    "enabled": false,
+    "every_hours": 6
+  }
+}

@@ -1,0 +1,86 @@
+/* Applications tab: stages, the board, attachments, delete choices. */
+
+/* --- Application tracking --- */
+.stage-badge, .stage-chip { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.stage-new, .stage-not_interested { background: var(--bg-sunken); color: var(--text-muted); }
+.stage-saved { background: var(--border); color: var(--text-2); }
+.stage-applied { background: var(--info-soft); color: var(--info-text); }
+.stage-interviewing { background: var(--warn-soft); color: var(--warn-text); }
+.stage-offer { background: var(--ok-soft); color: var(--ok-text); }
+.stage-rejected { background: var(--danger-soft); color: var(--danger-text); }
+
+.stage-counts { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+.stage-chip {
+  background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-2); cursor: pointer;
+  padding: 5px 12px; border-radius: 999px; font-size: 13px; font-weight: 500;
+}
+.stage-chip.active { background: var(--primary); color: var(--on-primary); border-color: var(--text); }
+.stage-chip.active .muted { color: var(--on-primary-muted); }
+.stage-chip .muted { margin-left: 4px; }
+
+.view-toggle { display: flex; border: 1px solid var(--border-strong); border-radius: 6px; overflow: hidden; }
+.view-toggle button { border: none; border-radius: 0; background: var(--bg-elevated); color: var(--text); padding: 6px 12px; }
+.view-toggle button.active { background: var(--primary); color: var(--on-primary); }
+.view-toggle button:hover:not(.active) { background: var(--bg-hover); }
+
+.board { display: flex; gap: 12px; overflow-x: auto; padding-bottom: 8px; }
+.board-col {
+  min-width: 240px; max-width: 260px; flex-shrink: 0; background: var(--bg);
+  border: 1px solid var(--border); border-radius: 10px; padding: 10px;
+}
+.board-col.drag-over { border-color: var(--accent); border-style: dashed; background: var(--accent-soft); }
+.board-col-header { font-weight: 700; font-size: 12.5px; text-transform: uppercase; letter-spacing: .3px; color: var(--text-2); margin-bottom: 8px; }
+.board-col-header .muted { text-transform: none; font-weight: 500; }
+.board-card {
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 10px;
+  margin-bottom: 8px; cursor: grab;
+}
+.board-card.dragging { opacity: 0.5; }
+
+/* Radio choices in a confirm dialog, where each option needs a sentence
+   of explanation rather than a bare label. */
+.choice {
+  display: flex; gap: 10px; align-items: flex-start; padding: 11px 12px;
+  border: 1px solid var(--border); border-radius: 8px; cursor: pointer; font-size: 13.5px;
+}
+.choice + .choice { margin-top: 8px; }
+.choice:hover { background: var(--bg-hover); }
+.choice:has(input:checked) { border-color: var(--text); background: var(--bg-hover); }
+.choice input { width: auto; margin-top: 2px; flex-shrink: 0; }
+.choice .muted { margin-top: 3px; line-height: 1.45; }
+
+.btn-danger-solid { background: var(--danger); border-color: var(--danger-text); color: var(--on-primary); }
+.btn-danger-solid:hover:not(:disabled) { background: var(--danger); }
+
+/* Row action that stays out of the way until you want it. */
+.row-action {
+  background: transparent; border: 0; color: var(--text-faint); padding: 2px 6px;
+  border-radius: 6px; font-size: 14px; line-height: 1;
+}
+tr:hover .row-action { color: var(--text-muted); }
+.card-action { opacity: 0; transition: opacity .12s ease; }
+.board-card:hover .card-action, .card-action:focus-visible { opacity: 1; }
+.row-action:hover:not(:disabled) { background: var(--danger-soft); color: var(--danger-text); }
+
+.form-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 0 14px; }
+
+.section { margin-top: 14px; padding-top: 14px; border-top: 1px solid var(--border-faint); }
+.section:first-child { margin-top: 0; padding-top: 0; border-top: none; }
+
+.attachment-row { display: flex; align-items: center; gap: 8px; padding: 6px 0; border-bottom: 1px solid var(--border-faint); font-size: 13px; flex-wrap: wrap; }
+.attachment-row:last-child { border-bottom: none; }
+.kind-badge { flex-shrink: 0; }
+.file-status { flex-shrink: 0; }
+.file-checklist { max-height: 220px; overflow-y: auto; border: 1px solid var(--border-faint); border-radius: 6px; padding: 6px 8px; }
+
+.overdue { color: var(--danger-text); font-weight: 600; }
+
+/* Generated-document state on the applications list. */
+.docs-have, .docs-missing {
+  display: inline-flex; padding: 1px 7px; border-radius: 999px;
+  font-size: 11px; font-weight: 600; white-space: nowrap;
+}
+.docs-have { background: var(--ok-soft); color: var(--ok-text); }
+.docs-missing { background: var(--bg-sunken); color: var(--text-faint); }
+
+.badge.composed { background: var(--info-soft); color: var(--info-text); }

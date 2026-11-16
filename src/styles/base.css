@@ -1,0 +1,57 @@
+/* Element defaults, form controls, buttons, links, focus. */
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  font-size: 14px;
+  line-height: 1.45;
+  -webkit-font-smoothing: antialiased;
+}
+
+* { box-sizing: border-box; }
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+input, select, textarea {
+  padding: 6px 8px;
+  border-radius: var(--r-2);
+  border: 1px solid var(--border-strong);
+  background: var(--bg-elevated);
+  color: var(--text);
+}
+input::placeholder, textarea::placeholder { color: var(--text-faint); }
+textarea { width: 100%; resize: vertical; }
+
+button {
+  background: var(--primary);
+  color: var(--on-primary);
+  border: 1px solid var(--primary);
+  border-radius: var(--r-2);
+  padding: 6px 12px;
+  cursor: pointer;
+}
+button:disabled { opacity: 0.55; cursor: not-allowed; }
+button:hover:not(:disabled) { background: var(--primary-hover); }
+
+.btn-muted { background: var(--bg-elevated); color: var(--text); border-color: var(--border-strong); }
+.btn-muted:hover:not(:disabled) { background: var(--bg-hover); }
+.btn-danger { background: var(--bg-elevated); color: var(--danger-text); border-color: var(--danger-border); }
+.btn-danger:hover:not(:disabled) { background: var(--danger-soft); }
+.btn-sm { padding: 3px 8px; font-size: 12px; }
+
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* One focus ring for everything keyboard-reachable. */
+:is(button, a, input, select, textarea, summary, [tabindex]):focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+:is(input, select, textarea):focus-visible { border-color: var(--accent); }
+
+::selection { background: var(--accent-soft); color: var(--text); }

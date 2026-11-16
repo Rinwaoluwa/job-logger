@@ -1,0 +1,204 @@
+/* The shared primitives in src/components/ui/. The modal, drawer and
+   segmented base rules are still in legacy.css until it is drained. */
+
+.btn-icon { padding: 4px 8px; line-height: 1; }
+.btn-ghost { background: transparent; color: var(--text-2); border-color: transparent; }
+.btn-ghost:hover:not(:disabled) { background: var(--bg-hover); color: var(--text); }
+
+.modal-sm { width: min(440px, 100%); }
+.modal-heading, .drawer-heading { min-width: 0; }
+.modal-title, .drawer-title { font-weight: 700; font-size: var(--fs-lg); }
+.modal-body-flush { padding: 0; }
+
+.form-actions { display: flex; justify-content: flex-end; gap: var(--s-2); margin-top: var(--s-3); }
+
+/* Tabs (underline variant; the segmented variant reuses .segmented). */
+.tabs-underline { display: flex; gap: 2px; border-bottom: 1px solid var(--border); flex-wrap: wrap; flex-shrink: 0; }
+.drawer > .tabs-underline { padding: 0 20px; }
+.tabs-underline button {
+  background: transparent; border: 0; border-bottom: 2px solid transparent; border-radius: 0;
+  padding: 8px 12px; margin-bottom: -1px; font-size: 13px; color: var(--text-muted); cursor: pointer;
+}
+.tabs-underline button:hover:not(.active) { background: transparent; color: var(--text); }
+.tabs-underline button.active { color: var(--text); border-bottom-color: var(--primary); font-weight: 600; }
+.tabs-underline button:focus-visible { box-shadow: inset var(--focus-ring); }
+.tabs-underline .count { margin-left: 5px; font-weight: 700; color: var(--warn-text); }
+
+/* Badge tones. */
+.badge-neutral { background: var(--bg-sunken); color: var(--text-muted); }
+.badge-ok { background: var(--ok-soft); color: var(--ok-text); }
+.badge-warn { background: var(--warn-soft); color: var(--warn-text); }
+.badge-danger { background: var(--danger-soft); color: var(--danger-text); }
+.badge-info { background: var(--info-soft); color: var(--info-text); }
+.badge-accent { background: var(--accent-soft); color: var(--accent-text); }
+
+/* Card heading row. */
+.card-head { display: flex; align-items: flex-start; justify-content: space-between; gap: var(--s-3); margin-bottom: var(--s-2); }
+.card-head .section-title { margin-bottom: 0; }
+.card-sunken { background: var(--bg); }
+.card-flush { padding: 0; }
+
+/* Field hint and error. */
+.field-hint { margin-top: 3px; }
+.field-error { margin-top: 3px; color: var(--danger-text); }
+.field-inline { display: inline-flex; align-items: center; gap: 6px; font-size: var(--fs-sm); }
+.field-inline input { width: auto; }
+
+/* Toolbar. */
+.toolbar { display: flex; flex-wrap: wrap; gap: var(--s-2); align-items: center; margin-bottom: 14px; }
+.toolbar-end { margin-left: auto; display: flex; gap: var(--s-2); align-items: center; }
+
+/* Empty state. */
+.empty-state { text-align: center; padding: var(--s-7) var(--s-4); }
+.empty-state-compact { padding: var(--s-4); }
+.empty-state-title { font-weight: 600; margin-bottom: var(--s-1); }
+.empty-state-body { max-width: 520px; margin: 0 auto; line-height: 1.5; }
+.empty-state-action { margin-top: var(--s-3); }
+
+/* Spacing and sizing utilities, so a component never needs style={{}}
+   for a margin. Scale: --s-1 4px … --s-4 16px. */
+.mt-1 { margin-top: var(--s-1); } .mt-2 { margin-top: var(--s-2); } .mt-3 { margin-top: var(--s-3); } .mt-4 { margin-top: var(--s-4); }
+.mb-0 { margin-bottom: 0; } .mb-1 { margin-bottom: var(--s-1); } .mb-2 { margin-bottom: var(--s-2); } .mb-3 { margin-bottom: var(--s-3); } .mb-4 { margin-bottom: var(--s-4); }
+.ml-1 { margin-left: var(--s-1); } .ml-auto { margin-left: auto; }
+.gap-1 { gap: var(--s-1); } .gap-2 { gap: var(--s-2); } .gap-3 { gap: var(--s-3); } .gap-4 { gap: var(--s-4); }
+.grow { flex: 1 1 auto; min-width: 0; } .grow-2 { flex: 2 1 auto; min-width: 0; }
+.stack { display: flex; flex-direction: column; gap: var(--s-2); }
+.stack-tight { display: flex; flex-direction: column; gap: var(--s-1); margin-bottom: var(--s-2); }
+.input-auto { width: auto; }
+.input-narrow { width: 160px; }
+.capitalize { text-transform: capitalize; }
+.bold { font-weight: 600; }
+.strong { font-weight: 700; }
+.pre-wrap { white-space: pre-wrap; }
+.card-tight { padding: 10px; }
+.chip-cloud { gap: var(--s-1); }
+.file-check-row { margin-bottom: 3px; }
+.file-check-row input[type="checkbox"] { width: auto; }
+
+/* More utilities the inline-style sweep maps onto. */
+.mt-0 { margin-top: 0; } .mt-5 { margin-top: var(--s-5); } .mt-6 { margin-top: var(--s-6); } .mt-7 { margin-top: var(--s-7); } .mt-8 { margin-top: var(--s-8); }
+.mb-5 { margin-bottom: var(--s-5); } .mb-6 { margin-bottom: var(--s-6); } .mb-7 { margin-bottom: var(--s-7); } .mb-8 { margin-bottom: var(--s-8); }
+.ml-0 { margin-left: 0; } .ml-2 { margin-left: var(--s-2); } .ml-3 { margin-left: var(--s-3); } .ml-4 { margin-left: var(--s-4); } .ml-5 { margin-left: var(--s-5); }
+.mr-1 { margin-right: var(--s-1); } .mr-2 { margin-right: var(--s-2); } .mr-3 { margin-right: var(--s-3); } .mr-auto { margin-right: auto; }
+.m-0 { margin: 0; }
+.p-0 { padding: 0; } .p-1 { padding: var(--s-1); } .p-2 { padding: var(--s-2); } .p-3 { padding: var(--s-3); } .p-4 { padding: var(--s-4); } .p-5 { padding: var(--s-5); }
+.pt-0 { padding-top: 0; } .pt-1 { padding-top: var(--s-1); } .pt-2 { padding-top: var(--s-2); } .pt-3 { padding-top: var(--s-3); } .pt-4 { padding-top: var(--s-4); }
+.pl-0 { padding-left: 0; } .pl-2 { padding-left: var(--s-2); } .pl-3 { padding-left: var(--s-3); } .pl-4 { padding-left: var(--s-4); } .pl-5 { padding-left: var(--s-5); }
+.gap-0 { gap: 0; } .gap-5 { gap: var(--s-5); }
+.medium { font-weight: 500; } .normal { font-weight: 400; }
+.text-xs { font-size: var(--fs-xs); } .text-md { font-size: var(--fs-md); } .text-lg { font-size: var(--fs-lg); } .text-xl { font-size: var(--fs-xl); }
+.lh { line-height: 1.5; } .lh-1 { line-height: 1; }
+.w-auto { width: auto; } .w-full { width: 100%; }
+.shrink-0 { flex-shrink: 0; } .wrap { flex-wrap: wrap; } .basis-full { flex-basis: 100%; } .min-w-0 { min-width: 0; }
+.block { display: block; } .inline { display: inline; } .flex { display: flex; } .inline-flex { display: inline-flex; } .hidden-el { display: none; }
+.nowrap { white-space: nowrap; }
+.text-center { text-align: center; } .text-right { text-align: right; } .text-left { text-align: left; }
+.items-start { align-items: flex-start; } .items-center { align-items: center; } .items-baseline { align-items: baseline; } .items-end { align-items: flex-end; }
+.justify-between { justify-content: space-between; } .justify-end { justify-content: flex-end; } .justify-center { justify-content: center; }
+.uppercase { text-transform: uppercase; } .normal-case { text-transform: none; }
+.pointer { cursor: pointer; } .cursor-help { cursor: help; } .cursor-default { cursor: default; }
+.dim { opacity: .6; }
+.scroll-y { overflow-y: auto; } .overflow-hidden { overflow: hidden; } .overflow-auto { overflow: auto; }
+.break-word { overflow-wrap: anywhere; }
+.italic { font-style: italic; }
+.mono { font-family: var(--font-mono); }
+.text-danger { color: var(--danger-text); } .text-ok { color: var(--ok-text); } .text-info { color: var(--info-text); }
+.text-faint { color: var(--text-faint); } .text-2 { color: var(--text-2); } .text-body { color: var(--text); } .text-inherit { color: inherit; }
+.align-middle { vertical-align: middle; }
+.relative { position: relative; }
+.my-1 { margin-top: var(--s-1); margin-bottom: var(--s-1); }
+.col-span-all { grid-column: 1 / -1; }
+.select-all { user-select: all; }
+.flex-nowrap { flex-wrap: nowrap; }
+.p-pane { padding: 16px 20px; }
+
+.input-xs { width: 90px; }
+.warn-box { border-color: var(--warn-border); background: var(--warn-soft); color: var(--warn-text); }
+.jd-diff-text { white-space: pre-wrap; margin-top: var(--s-2); max-height: 240px; overflow-y: auto; color: var(--text); }
+
+/* --- Shared components (frames, tables, badges, progress) -------------- */
+/* Verified / unverified state on the Profile tab, matching the stage chips. */
+.chip-ok, .chip-warn {
+  display: inline-flex; padding: 2px 9px; border-radius: 999px;
+  font-size: 12px; font-weight: 600;
+}
+.chip-ok { background: var(--ok-soft); color: var(--ok-text); }
+.chip-warn { background: var(--warn-soft); color: var(--warn-text); }
+
+.container { max-width: 1180px; margin: 0 auto; padding: 20px; width: 100%; }
+.container-wide { max-width: 1400px; }
+
+.card { background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.card + .card { margin-top: 14px; }
+.section-title { font-weight: 700; font-size: 13px; text-transform: uppercase; letter-spacing: .3px; color: var(--text-2); margin-bottom: 8px; }
+
+.table-wrap { overflow-x: auto; }
+table.data-table { width: 100%; border-collapse: collapse; font-size: 13.5px; }
+table.data-table th { text-align: left; padding: 8px 10px; border-bottom: 2px solid var(--border); color: var(--text-2); font-weight: 600; white-space: nowrap; }
+table.data-table td { padding: 8px 10px; border-bottom: 1px solid var(--border-faint); vertical-align: middle; }
+table.data-table tr:hover td { background: var(--bg-hover); cursor: pointer; }
+
+.badge { display: inline-block; padding: 2px 8px; border-radius: 999px; font-size: 11.5px; font-weight: 600; }
+.fit-badge { display: inline-flex; align-items: center; gap: 5px; padding: 2px 9px; border-radius: 999px; font-size: 12px; font-weight: 600; }
+.fit-strong { background: var(--ok-soft); color: var(--ok-text); }
+.fit-good { background: var(--info-soft); color: var(--info-text); }
+.fit-stretch { background: var(--warn-soft); color: var(--warn-text); }
+.fit-weak, .fit-no { background: var(--danger-soft); color: var(--danger-text); }
+.fit-none { background: var(--bg-sunken); color: var(--text-muted); }
+
+.err-box {
+  background: var(--danger-soft); border: 1px solid var(--danger-border); color: var(--danger-text);
+  border-radius: 8px; padding: 10px 14px; font-size: 13.5px; margin: 10px 0;
+}
+
+.run-progress { display: flex; flex-direction: column; gap: 6px; margin: 10px 0; }
+.run-stage { display: flex; align-items: center; gap: 8px; font-size: 13px; color: var(--text-muted); }
+.run-stage .dot { width: 8px; height: 8px; border-radius: 50%; background: var(--border-strong); flex-shrink: 0; }
+.run-stage.running .dot { background: var(--info); animation: pulse 1s infinite; }
+.run-stage.done .dot { background: var(--ok); }
+.run-stage.failed .dot { background: var(--danger); }
+.run-stage.done, .run-stage.failed { color: var(--text); }
+@keyframes pulse { 0%,100% { opacity: 1; } 50% { opacity: .3; } }
+
+.job-filters { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; margin-bottom: 14px; }
+.job-filters input[type="text"], .job-filters input[type="search"] { min-width: 200px; }
+.pager { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; padding: 4px 0 10px; }
+.pager select { width: auto; }
+.table-wrap + .pager { padding: 10px 0 0; }
+
+.review-item { display: flex; justify-content: space-between; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--border-faint); align-items: flex-start; }
+.review-item:last-child { border-bottom: none; }
+.review-text { font-size: 13px; }
+.review-reason { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+.review-actions { display: flex; gap: 4px; flex-shrink: 0; }
+.review-actions button.chosen-accepted { background: var(--ok); border-color: var(--ok); }
+.review-actions button.chosen-rejected { background: var(--danger); border-color: var(--danger); }
+
+.form-row { margin-bottom: 12px; }
+.form-label { display: block; font-size: 12.5px; font-weight: 600; color: var(--text-2); margin-bottom: 4px; }
+
+
+.muted { color: var(--text-muted); }
+.small { font-size: 12.5px; }
+.flex-row { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; }
+.spread { display: flex; justify-content: space-between; align-items: center; }
+
+.modal-overlay {
+  position: fixed; inset: 0; background: var(--overlay); z-index: 50;
+  display: flex; align-items: center; justify-content: center; padding: 20px;
+}
+.modal {
+  width: min(640px, 100%); max-height: 90vh; overflow-y: auto; background: var(--bg-elevated);
+  border-radius: 10px; box-shadow: var(--shadow-2);
+}
+.modal-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; }
+.modal-body { padding: 16px 20px; }
+.modal-footer { padding: 12px 20px; border-top: 1px solid var(--border); display: flex; justify-content: flex-end; gap: 8px; }
+
+/* Cases the mechanical token mapping above gets wrong: text on a solid
+   status colour stays white in both themes. */
+.toast.error { background: var(--danger); color: #fff; }
+.story-chip.open { background: var(--info); color: #fff; }
+.review-actions button.chosen-accepted, .review-actions button.chosen-rejected { color: #fff; }
+.btn-danger-solid { color: #fff; }
+.btn-danger-solid:hover:not(:disabled) { background: var(--danger-text); }

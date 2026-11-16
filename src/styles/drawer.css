@@ -1,0 +1,189 @@
+/* The job drawer's document workspace: the rail, the page surface, the
+   revise thread. The drawer and modal frames themselves are in ui.css. */
+
+.drawer-overlay {
+  position: fixed; inset: 0; background: var(--overlay); z-index: 40;
+  display: flex; justify-content: flex-end;
+}
+/* The drawer is a fixed-height column: header and tabs stay put, only the
+   body scrolls. It used to scroll as a single block, so the tabs and the
+   "Prepare application" button scrolled away as soon as you looked at a
+   document. */
+.drawer {
+  width: min(880px, 100%); background: var(--bg-elevated); height: 100%; padding: 0;
+  box-shadow: var(--shadow-2);
+  display: flex; flex-direction: column; min-height: 0;
+  transition: width .15s ease;
+}
+/* A resume is 8.5in wide. Reading one in a 600px sidebar meant scrolling
+   in both directions, so the Documents tab widens the whole drawer. */
+.drawer-wide { width: min(1200px, 100vw - 48px); }
+.drawer-header { padding: 16px 20px; border-bottom: 1px solid var(--border); display: flex; justify-content: space-between; align-items: flex-start; gap: 10px; flex-shrink: 0; }
+.drawer-body { padding: 16px 20px; flex: 1; overflow-y: auto; min-height: 0; }
+.drawer-body-flush { padding: 0; overflow: hidden; }
+.drawer-subhead { padding: 10px 20px 0; flex-shrink: 0; }
+.drawer-tabs { display: flex; gap: 2px; padding: 0 20px; border-bottom: 1px solid var(--border); flex-wrap: wrap; flex-shrink: 0; }
+.drawer-tab { padding: 8px 12px; font-size: 13px; color: var(--text-muted); border-bottom: 2px solid transparent; cursor: pointer; }
+.drawer-tab.active { color: var(--text); border-bottom-color: var(--text); font-weight: 600; }
+
+/* --- Document workspace (Documents tab) --------------------------------
+   Left rail picks which document, the main column is a toolbar plus the
+   document itself on a page surface. Replaces a flat row of "Resume v2 /
+   Resume v1 / Cover letter v2 ..." buttons above one long scroll. */
+.docws { display: grid; grid-template-columns: 216px minmax(0, 1fr); height: 100%; min-height: 0; }
+.docws-rail {
+  border-right: 1px solid var(--border); background: var(--bg);
+  overflow-y: auto; padding: 12px 10px; min-height: 0;
+}
+.docws-main { display: flex; flex-direction: column; min-width: 0; min-height: 0; }
+.docws-toolbar {
+  display: flex; align-items: center; gap: 10px; flex-wrap: wrap;
+  padding: 10px 16px; border-bottom: 1px solid var(--border); background: var(--bg-elevated); flex-shrink: 0;
+}
+.docws-toolbar-title { font-weight: 600; font-size: 13.5px; white-space: nowrap; }
+.docws-spacer { flex: 1 1 auto; }
+.docws-surface { flex: 1; overflow: auto; min-height: 0; background: var(--bg-sunken); padding: 20px; }
+
+/* A sheet of letter-size paper, centred, so the preview reads like the
+   thing that gets sent rather than a squeezed iframe. */
+.doc-page {
+  width: 816px; max-width: 100%; margin: 0 auto; background: var(--bg-elevated);
+  box-shadow: var(--shadow-2);
+  border-radius: 2px;
+}
+.doc-page-iframe { display: block; width: 100%; border: 0; background: var(--paper); }
+.doc-page-text {
+  padding: 64px 72px; font-size: 13.5px; line-height: 1.6; white-space: pre-wrap;
+  min-height: 600px;
+}
+.docws-panel { width: 816px; max-width: 100%; margin: 0 auto; }
+
+.rail-group { margin-bottom: 12px; }
+.rail-item {
+  display: block; width: 100%; text-align: left; font-family: inherit;
+  background: transparent; border: 1px solid transparent; color: var(--text);
+  border-radius: 7px; padding: 7px 9px; cursor: pointer; font-size: 13px;
+}
+.rail-item:hover:not(.active) { background: var(--bg-hover); }
+.rail-item.active { background: var(--primary); border-color: var(--text); color: var(--on-primary); }
+.rail-item.active .muted, .rail-item.active .rail-meta { color: var(--on-primary-muted); }
+.rail-meta { font-size: 11.5px; color: var(--text-muted); margin-top: 1px; }
+.rail-version {
+  display: block; width: 100%; text-align: left; font-family: inherit; font-size: 12px;
+  background: transparent; border: 0; color: var(--text-muted); cursor: pointer;
+  padding: 4px 9px 4px 20px; border-radius: 6px;
+}
+.rail-version:hover:not(.active) { background: var(--bg-hover); color: var(--text); }
+.rail-version.active { background: var(--border); color: var(--text); font-weight: 600; }
+.rail-toggle {
+  background: transparent; border: 0; color: var(--text-muted); font-family: inherit;
+  font-size: 11.5px; padding: 3px 9px; cursor: pointer; text-align: left; width: 100%;
+}
+.rail-toggle:hover { color: var(--text); background: transparent; text-decoration: underline; }
+
+/* Preview / Review / Bullets, so those are three places you switch between
+   instead of three things stacked in one scroll. */
+.segmented { display: inline-flex; border: 1px solid var(--border-strong); border-radius: 7px; overflow: hidden; }
+.segmented button {
+  border: 0; border-radius: 0; background: var(--bg-elevated); color: var(--text-2);
+  padding: 5px 11px; font-size: 12.5px; font-weight: 500;
+}
+.segmented button + button { border-left: 1px solid var(--border); }
+.segmented button.active { background: var(--primary); color: var(--on-primary); }
+.segmented button:hover:not(.active) { background: var(--bg-sunken); }
+.segmented .count { margin-left: 5px; font-weight: 700; color: var(--warn-text); }
+.segmented button.active .count { color: var(--warn); }
+
+.more-menu { position: relative; display: inline-block; }
+.more-menu > summary {
+  list-style: none; cursor: pointer; padding: 6px 10px; font-size: 12.5px;
+  border: 1px solid var(--border-strong); border-radius: 6px; background: var(--bg-elevated); color: var(--text);
+}
+.more-menu > summary::-webkit-details-marker { display: none; }
+.more-menu[open] > summary { background: var(--bg-hover); }
+.more-menu-items {
+  position: absolute; right: 0; top: calc(100% + 4px); z-index: 5; min-width: 168px;
+  background: var(--bg-elevated); border: 1px solid var(--border); border-radius: 8px; padding: 4px;
+  box-shadow: var(--shadow-2);
+}
+.more-menu-items button {
+  display: block; width: 100%; text-align: left; background: transparent;
+  border: 0; border-radius: 6px; color: var(--text); padding: 7px 9px; font-size: 13px;
+}
+.more-menu-items button:hover:not(:disabled) { background: var(--bg-sunken); }
+
+@media (max-width: 900px) {
+  .docws { grid-template-columns: 1fr; grid-template-rows: auto minmax(0, 1fr); }
+  .docws-rail { border-right: 0; border-bottom: 1px solid var(--border); max-height: 152px; }
+  .docws-surface { padding: 10px; }
+}
+
+/* --- Revise pane (Documents tab) ---------------------------------------
+   A conversation about the résumé on screen: the thread scrolls above,
+   the composer stays pinned below, like a chat. Your instructions sit on
+   the right, the AI's notes on the left. */
+.docws-surface-flush { padding: 0; overflow: hidden; display: flex; flex-direction: column; }
+.revise-ws { display: flex; flex-direction: column; flex: 1; min-height: 0; height: 100%; }
+.revise-scroll { flex: 1; min-height: 0; overflow-y: auto; padding: 20px 20px 12px; }
+.revise-column { width: 760px; max-width: 100%; margin: 0 auto; }
+.revise-thread-head { text-align: center; margin-bottom: 14px; }
+
+.revise-entry + .revise-entry { margin-top: 18px; }
+.revise-row { display: flex; gap: 10px; align-items: flex-start; }
+.revise-row.you { justify-content: flex-end; }
+.revise-row.ai { margin-top: 8px; }
+.revise-avatar {
+  flex: 0 0 26px; width: 26px; height: 26px; border-radius: 50%; margin-top: 2px;
+  background: var(--primary); color: var(--on-primary); font-size: 10.5px; font-weight: 700; letter-spacing: .04em;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+.revise-bubble { padding: 10px 12px; border-radius: 12px; font-size: 13px; line-height: 1.5; min-width: 0; }
+.revise-bubble.you { background: var(--primary); color: var(--on-primary); max-width: 78%; border-bottom-right-radius: 4px; }
+.revise-bubble.ai { background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text); flex: 1; border-top-left-radius: 4px; box-shadow: var(--shadow-1); }
+.revise-bubble.ai.working { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
+.revise-entry.current .revise-bubble.ai { border-color: var(--text-faint); }
+.revise-entry.pending { opacity: .85; }
+.revise-meta { display: flex; align-items: center; gap: 8px; font-size: 11px; font-weight: 600; color: var(--on-primary-muted); margin-bottom: 4px; text-transform: uppercase; letter-spacing: .04em; }
+.revise-chip {
+  display: inline-block; font-size: 10.5px; font-weight: 600; letter-spacing: .02em; text-transform: none;
+  padding: 1px 7px; border-radius: 999px; background: color-mix(in srgb, var(--on-primary) 14%, transparent); color: var(--on-primary-muted);
+  border: 1px solid transparent; font-family: inherit; line-height: 1.5;
+}
+.revise-chip.current { background: var(--warn); color: var(--ink-dark); }
+.revise-chip.link { cursor: pointer; border-color: color-mix(in srgb, var(--on-primary) 30%, transparent); }
+.revise-chip.link:hover { background: color-mix(in srgb, var(--on-primary) 26%, transparent); }
+.revise-body { white-space: pre-wrap; overflow-wrap: anywhere; }
+.revise-notes { margin: 0; padding-left: 18px; }
+.revise-notes li + li { margin-top: 5px; }
+.revise-questions { margin-top: 10px; padding: 9px 12px; border-radius: 8px; background: var(--warn-soft); border: 1px solid var(--warn-border); color: var(--warn-text); }
+.revise-questions-title { font-size: 11.5px; font-weight: 700; text-transform: uppercase; letter-spacing: .03em; margin-bottom: 4px; }
+.revise-failed { margin-top: 14px; }
+
+.revise-composer { flex-shrink: 0; border-top: 1px solid var(--border); background: var(--bg-elevated); padding: 12px 20px 14px; }
+.revise-composer textarea { font-size: 13.5px; border-radius: 10px; padding: 10px 12px; }
+.revise-composer-hint {
+  font-size: 12.5px; color: var(--warn-text); background: var(--warn-soft); border: 1px solid var(--warn-border);
+  border-radius: 8px; padding: 7px 10px; margin-bottom: 8px;
+}
+.revise-composer-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 8px; flex-wrap: wrap; }
+.revise-composer-foot > span { flex: 1 1 auto; min-width: 0; }
+.revise-composer-foot button { white-space: nowrap; flex-shrink: 0; }
+
+.revise-empty { text-align: center; padding: 48px 16px 24px; max-width: 520px; margin: 0 auto; }
+.revise-empty-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; }
+.revise-empty p { margin: 0 0 16px; line-height: 1.5; }
+.revise-examples { display: flex; flex-direction: column; gap: 6px; text-align: left; }
+.revise-example {
+  background: var(--bg-elevated); border: 1px solid var(--border); color: var(--text-2); border-radius: 8px;
+  padding: 8px 11px; font-size: 12.5px; text-align: left; font-family: inherit; cursor: pointer;
+}
+.revise-example:hover:not(:disabled) { background: var(--bg-hover); border-color: var(--text-faint); color: var(--text); }
+
+@media (max-width: 900px) {
+  .revise-scroll { padding: 12px 10px 8px; }
+  .revise-composer { padding: 10px; }
+  .revise-bubble.you { max-width: 92%; }
+}
+
+.rail-quote { font-style: italic; color: var(--text-muted); font-size: 11.5px; margin-top: 2px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: 100%; }
+.rail-item.active .rail-quote { color: var(--on-primary-muted); }
