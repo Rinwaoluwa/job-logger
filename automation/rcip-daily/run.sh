@@ -15,8 +15,9 @@ fi
 
 PROMPT="$(cat "$DIR/prompt.md")"
 
-# Adzuna keys come from the project's .env (git-ignored), never from the repo.
-ENV_FILE="$HOME/Downloads/job-logger/.env"
+# Adzuna keys live in ~/.rcip-jobs/secrets.env (never in the repo). launchd
+# jobs cannot read ~/Downloads, so nothing here may point into the project.
+ENV_FILE="$DIR/secrets.env"
 if [[ -f "$ENV_FILE" ]]; then
   ADZ_ID="$(grep -E '^ADZUNA_APP_ID=' "$ENV_FILE" | cut -d= -f2- | tr -d '"'"'"' ')"
   ADZ_KEY="$(grep -E '^ADZUNA_APP_KEY=' "$ENV_FILE" | cut -d= -f2- | tr -d '"'"'"' ')"
@@ -28,6 +29,7 @@ fi
 echo "=== start $(date) ===" >> "$LOG"
 "$HOME/.local/bin/claude" -p "$PROMPT" \
   --model opus \
+  --disallowedTools "Agent" "Task" \
   --allowedTools "WebSearch" "WebFetch" \
     "mcp__claude_ai_Gmail__send_message" \
     "mcp__claude_ai_Gmail__search_threads" \
@@ -36,7 +38,13 @@ echo "=== start $(date) ===" >> "$LOG"
   >> "$LOG" 2>&1
 STATUS=$?
 echo "=== end $(date) exit=$STATUS ===" >> "$LOG"
-[[ $STATUS -eq 0 ]] && date +%Y-%m-%d > "$DIR/logs/last-success"
+# Only a confirmed send counts. Otherwise the 13:00 and 16:00 retries run.
+if [[ $STATUS -eq 0 ]] && grep -q "^EMAIL_SENT " "$LOG"; then
+  date +%Y-%m-%d > "$DIR/logs/last-success"
+else
+  echo "No confirmed email in this run; a later retry will try again." >> "$LOG"
+  STATUS=1
+fi
 
 # Keep 60 days of logs.
 find "$DIR/logs" -name "*.log" -mtime +60 -delete

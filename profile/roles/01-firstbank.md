@@ -26,6 +26,7 @@ what you own versus other teams.
 - Vite configuration optimizations for faster builds and CI feedback
 
 ## Technologies actually used
+- Next.js (confirmed by Peter 2026-11-17)
 - React
 - Storybook
 - Vite
