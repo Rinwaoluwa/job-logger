@@ -35,7 +35,10 @@ a) News: intake opening or closing, allocations reached or cut, designated-emplo
 b) Job leads: any post mentioning a software/developer/programmer opening at an employer in an RCIP community, an Atlantic province, Alberta or Saskatchewan. Treat these as leads only: follow each to an official posting and run it through every check in Step 4. A Reddit or X post alone is never enough to list a job.
 
 ## Step 3: Search for jobs
-Job titles to search everywhere: software developer, software engineer, programmer, web developer, frontend/front-end developer, full stack developer, mobile developer, application developer. That covers NOC 21231 (software engineers and designers), 21232 (software developers and programmers), 21234 (web designers and developers) and closely related 2123x codes.
+Search by the WORK, not the title. Employers name the same job many ways, so search with both titles and skill keywords, and never keep or drop a job because of its title alone.
+- Titles to search: software developer, software engineer (including I/II/III, intermediate, senior), programmer, web developer, frontend/front-end developer or engineer, UI developer or engineer, UX engineer, JavaScript developer, React developer, web application developer, application developer, product engineer, full stack developer, mobile developer (React Native), digital or e-commerce developer.
+- Keywords to search on their own and with each town or province: React, Next.js, TypeScript, React Native, "front end", "user interface", "component library", "design system", accessibility/WCAG, Storybook.
+That covers NOC 21231 (software engineers and designers), 21232 (software developers and programmers), 21234 (web designers and developers) and closely related 2123x codes.
 Sources: Job Bank (jobbank.gc.ca, which often marks postings as open to RCIP or AIP candidates), Indeed Canada, LinkedIn public job pages, the community or provincial job boards, and the careers pages of designated employers that are technology companies, banks, credit unions, insurers, hospitals and health authorities, universities, colleges, governments or large firms likely to hire developers.
 
 Some big job boards (Indeed, Glassdoor, Workopolis) often block automated access. Always also use these sources, which usually work:
@@ -89,11 +92,28 @@ d) SK-TECH: search Saskatchewan for on-site or hybrid software jobs, mainly in S
 2. Designated employer: for RCIP, the employer is designated by that community; for AIP, the employer is designated for AIP by that province. Confirm this from the published designated-employer list, or from the posting explicitly saying the employer is designated for RCIP or AIP (e.g. Job Bank's program tag, or the posting text). If you cannot confirm designation, DROP the job. Never assume designation because the employer is large. For AB-ATP and SK-TECH there is no designation, so instead: the employer must be based in or have an office in that province, and nothing in the posting may rule out supporting a provincial nomination. For SK-TECH, add a "Watch out" line that the employer must obtain an SINP Job Approval for the position.
 3. The occupation fits NOC 2123x software/programming work, the community or province does not exclude it, and for AB-ATP and SK-TECH the NOC is on that pathway's current eligible occupation list.
 4. Full-time, non-seasonal, and permanent or at least one year.
-5. Peter plausibly meets the requirements: about 5 years of frontend experience; no degree requirement he clearly fails (a hard requirement for a specific university degree in CS with no 'or equivalent experience' is a fail); not a pure backend, embedded, data science, QA-only, or management role; no security clearance or citizenship/PR requirement; does not say 'no sponsorship' or 'must already be authorized to work in Canada' without exception.
+5. The duties match Peter's real experience (Step 4b below says how to judge this). Also: no degree requirement he clearly fails (a hard requirement for a specific university degree in CS with no 'or equivalent experience' is a fail); no security clearance or citizenship/PR requirement; does not say 'no sponsorship' or 'must already be authorized to work in Canada' without exception.
 6. The posting is open: posted within the last 45 days, or still live on the employer's site, and the deadline (if any) has not passed.
 7. There is a real posting (employer site, Job Bank, Indeed, LinkedIn or a community/provincial board), not just a social media post.
 If a job qualifies under two programs (e.g. Pictou County, NS for RCIP and AIP; Claresholm, AB for RCIP and AB-ATP; Moose Jaw, SK for RCIP and SK-TECH), list it once and show both badges.
-Alberta and Saskatchewan have many more tech jobs than the rural pilots. If more than 12 jobs qualify, give full cards to the 12 best fits (closest to senior frontend React/TypeScript, soonest deadlines first) and list the rest as one line each (title, employer, city, link) under "More qualifying jobs".
+Alberta and Saskatchewan have many more tech jobs than the rural pilots. If more than 12 jobs qualify, give full cards to the 12 best fits (best duty match from Step 4b, then soonest deadline) and list the rest as one line each (title, employer, city, link) under "More qualifying jobs".
+
+## Step 4b: Compare the duties with Peter's résumé (do this for every job that passes rules 1–4 and 6–7)
+Open the full posting and read the whole description. The title does not decide anything: a "Product Engineer" or "Software Engineer II" doing React work can be a strong fit, and a "Frontend Developer" who mostly writes backend code can be a poor one.
+1. List what the job actually involves: the 5–10 main duties ("what you'll do") and the must-have requirements, in the posting's own words, shortened. Keep nice-to-haves separate.
+2. Mark each one against the facts in Step 6b only:
+   - STRONG: he has done this, and you can name the fact (e.g. "Core Web Vitals +35% at First Bank").
+   - PARTIAL: he has done something close, or used the tool in a smaller way (say what).
+   - GAP: nothing in his facts covers it.
+   Do not stretch: a skill he only "also uses" is at most PARTIAL for a duty that centres on it, and backend, DevOps, data or management duties are GAP unless his facts show them.
+3. Decide:
+   - APPLY when at least two thirds of the main duties are STRONG or PARTIAL, at least half are STRONG, and no must-have is a GAP that is central to the job (e.g. "5 years of Java", "own the Kubernetes platform").
+   - STRETCH when the duties fit but one must-have is a GAP he could plausibly close (e.g. a backend framework listed as required in an otherwise frontend role). Keep it only if fewer than 12 APPLY jobs qualify, and say exactly what the gap is in "Watch out".
+   - SKIP otherwise, and put it in "Checked but rejected" with the main gap (e.g. "60% backend Java duties").
+   Years of experience: treat "X+ years" as met if he has at least X−1 years in the same kind of work; more than 2 years short is a GAP.
+4. In the job card, show the result as a "Duty match" row: "<n> of <m> duties strong or partial · APPLY" (or STRETCH), and make the three "Why you fit" lines the three strongest STRONG matches, each naming the duty and the fact. Put the biggest PARTIAL or GAP items in "Watch out".
+5. Write the application email (Step 6b) around the duties that matter most to this employer, not around his title.
+Rank jobs by duty match first, then deadline.
 
 ## Step 5: Don't repeat
 Use the Gmail connector's search_threads tool to find earlier emails sent to peterodejobi9@gmail.com whose subject contains 'software jobs' (older subjects: 'RCIP software jobs', 'RCIP & AIP software jobs'), and read them. Skip any job (same employer and title and link) already sent, unless the posting has a new deadline or was reposted; mark reposts 'Reposted'. Also skip news items already sent, unless there is a material new development.
@@ -173,6 +193,7 @@ TEMPLATE (copy it, fill in the {placeholders}, repeat the marked blocks):
     <div style="font-size:15px;color:#374151;margin-top:2px;">{Employer} · {Town}, {Prov} ({on-site/hybrid})</div>
     <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="font-size:14px;margin-top:14px;border-collapse:collapse;">
       <tr><td style="padding:6px 0;color:#6b7280;width:120px;border-top:1px solid #f3f4f6;">Closes</td><td style="padding:6px 0;border-top:1px solid #f3f4f6;"><b style="color:#c2410c;">{Thu 20 Nov 2026 or "Not stated"}</b> (posted {date})</td></tr>
+      <tr><td style="padding:6px 0;color:#6b7280;border-top:1px solid #f3f4f6;">Duty match</td><td style="padding:6px 0;border-top:1px solid #f3f4f6;"><b>{n} of {m} duties strong or partial</b> · {APPLY or STRETCH}</td></tr>
       <tr><td style="padding:6px 0;color:#6b7280;border-top:1px solid #f3f4f6;">Pay</td><td style="padding:6px 0;border-top:1px solid #f3f4f6;">{pay · hours · permanent full-time, or "Not stated"}</td></tr>
       <tr><td style="padding:6px 0;color:#6b7280;border-top:1px solid #f3f4f6;">Apply by email</td><td style="padding:6px 0;border-top:1px solid #f3f4f6;">{<a href="mailto:x@y" style="color:#2563eb;">x@y</a>, OR "No email published. Apply through the link below"}</td></tr>
       <!-- optional row --><tr><td style="padding:6px 0;color:#6b7280;border-top:1px solid #f3f4f6;">{RCIP office / AIP office}</td><td style="padding:6px 0;border-top:1px solid #f3f4f6;"><a href="mailto:{email}" style="color:#2563eb;">{email}</a> <span style="color:#6b7280;">(program questions only)</span></td></tr>
