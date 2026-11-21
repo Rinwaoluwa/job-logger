@@ -53,7 +53,14 @@ A scheduled task on claude.ai/code starts a fresh cloud session every day at
   manual run and the scheduled one do not double up.
 
 Manage the schedule under Scheduled tasks on claude.ai/code ("RCIP & AIP daily
-job search"). It needs the Gmail and Google Drive connectors. If the cloud task
+job search"). It needs the Gmail and Google Drive connectors switched on in
+that task's settings.
+
+The scheduled session does not read this repository. It downloads one file
+from Google Drive, `rcip-daily-cloud-runbook.md` (next to the résumé), which is
+`fetch.sh`, `cloud.md` and `prompt.md` joined into one text. After editing any
+of the three here, rebuild that file and upload it over the Drive copy (ask
+Claude to "rebuild the cloud runbook"). If the cloud task
 is on, stop the Mac job so you do not get two digests:
 
 ```bash
