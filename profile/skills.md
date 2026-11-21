@@ -13,7 +13,7 @@ means the résumé lists the skill but does not tie it to a role.
 |---|---|---|---|
 | React | <ask> | firstbank, ctrust, ctrust-jr | |
 | TypeScript | <ask> | ctrust, ctrust-jr | |
-| Next.js (App Router, Server Components, SSR/SSG/ISR) | <ask> | | which role? |
+| Next.js (App Router, Server Components, SSR/SSG/ISR) | <ask> | firstbank | confirmed by Peter 2026-11-17 |
 | React Native | <ask> | | which role? |
 | Zustand | <ask> | ctrust | |
 | Tailwind CSS | <ask> | | |
@@ -32,7 +32,11 @@ means the résumé lists the skill but does not tie it to a role.
 | Cypress | <ask> | ctrust | |
 | Sentry | <ask> | | |
 | Firebase Crashlytics | <ask> | | |
-| Claude Code / Cursor / Antigravity | <ask> | | |
+| Claude Code / Cursor / Antigravity | <ask> | | builds with agents (Claude Code); confirmed 2026-11-17 |
+| A/B testing (ran A/B testing programs) | <ask> | firstbank, ctrust | confirmed by Peter 2026-11-17: a winning test gave a 30% increase; which metric? <ask> |
+| Firebase Remote Config | <ask> | | confirmed 2026-11-17; which role? <ask> |
+| Firebase Analytics | <ask> | | confirmed 2026-11-17; which role? <ask> |
+| WordPress | <ask> | | confirmed 2026-11-17; which role? <ask> |
 
 ## Buzzword glossary
 

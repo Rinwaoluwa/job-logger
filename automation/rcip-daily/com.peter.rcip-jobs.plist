@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.peter.rcip-jobs</string>
+  <key>ProgramArguments</key>
+  <array>
+    <string>/bin/zsh</string>
+    <string>/Users/openspace/.rcip-jobs/run.sh</string>
+  </array>
+  <!-- 11:00 is the daily run. 13:00 and 16:00 are retries: run.sh exits
+       at once if today's email was already confirmed sent. -->
+  <key>StartCalendarInterval</key>
+  <array>
+    <dict><key>Hour</key><integer>11</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>13</integer><key>Minute</key><integer>0</integer></dict>
+    <dict><key>Hour</key><integer>16</integer><key>Minute</key><integer>0</integer></dict>
+  </array>
+  <key>EnvironmentVariables</key>
+  <dict>
+    <key>PATH</key>
+    <string>/Users/openspace/.local/bin:/usr/local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    <key>HOME</key>
+    <string>/Users/openspace</string>
+  </dict>
+  <key>StandardOutPath</key>
+  <string>/Users/openspace/.rcip-jobs/logs/launchd.out</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/openspace/.rcip-jobs/logs/launchd.err</string>
+</dict>
+</plist>
