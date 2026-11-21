@@ -50,8 +50,9 @@ because WebFetch failed. Instead:
 - Already known to block bots: princeedwardisland.ca (use the PEI names in
   `prompt.md`), Indeed, Glassdoor, hiring.cafe. Do not retry them.
 - The "Do not read or change any local files" line in `prompt.md` is for the
-  Mac. Here you may run `fetch.sh`, `sha256sum` and `cp`, and write temporary
-  files under `/tmp` or your scratchpad. Nothing else.
+  Mac. Here you may run `fetch.sh`, `curl` (for JSON POST APIs such as
+  Workday's), `sha256sum` and `cp`, and write temporary files under `/tmp` or
+  your scratchpad. Nothing else.
 
 ## Adzuna
 There are no Adzuna keys in the cloud. Skip the Adzuna source.
