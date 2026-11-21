@@ -9,3 +9,6 @@ server/db/*.db-wal
 server/db/*.db-shm
 
 # Local logs of the daily RCIP/AIP search live in ~/.rcip-jobs/logs, outside the repo.
+
+# Résumé copy made by the cloud run of automation/rcip-daily (see cloud.md).
+.resume-cache/
